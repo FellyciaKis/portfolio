@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fellycia Kisukika  </title>
+<meta name="description" content="Portfolio de Fellycia Kisukika Kayana — développement web, analyse de données, Business Intelligence et Intelligence Artificielle.">
+<meta property="og:title" content="Fellycia Kisukika Kayana — Génie Informatique & Intelligence Artificielle">
+<meta property="og:description" content="Développement web, analyse de données, Business Intelligence et IA — services, projets et profil.">
+<meta property="og:image" content="assets/felly.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --surface:#F4F5F7;
+    --ink:#12151C;
+    --muted:#5B6472;
+    --line:#E2E5EA;
+    --navy:#24365E;
+    --navy-soft:#E9EDF4;
+    --signal:#2F8F6E;
+    --signal-soft:#E4F1EC;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  .serif{font-family:'Source Serif 4', serif;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  header{
+    position:sticky; top:0; z-index:20; background:rgba(255,255,255,0.88);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:18px 0;}
+  .nav-mark{font-family:'Source Serif 4', serif; font-style:italic; font-size:19px; font-weight:600;}
+  .nav-links{display:flex; gap:18px; font-size:12.5px; font-weight:500;}
+  .nav-links a{text-decoration:none; color:var(--muted); white-space:nowrap;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links .sec-label{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--navy); margin-right:3px;}
+  @media (max-width:900px){ .nav-links{display:none;} }
+
+  .hero{padding:72px 0 88px;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;}
+  @media (max-width:800px){ .hero-grid{grid-template-columns:1fr; gap:40px;} }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em;
+    color:var(--navy); text-transform:uppercase; margin:0 0 18px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--navy); display:inline-block;}
+
+  h1.name{
+    font-family:'Source Serif 4', serif; font-style:italic; font-weight:500;
+    font-size:clamp(34px, 5vw, 54px); line-height:1.05; margin:0 0 14px; letter-spacing:-0.01em;
+  }
+  .role{font-size:18px; font-weight:600; margin:0 0 18px; color:var(--ink);}
+  .role span{color:var(--muted); font-weight:400;}
+  .lead{font-size:16px; line-height:1.7; color:var(--muted); max-width:540px; margin:0 0 28px;}
+
+  .highlight-row{display:flex; gap:28px; flex-wrap:wrap; margin:0 0 30px; padding-top:22px; border-top:1px solid var(--line);}
+  .highlight-item .h-num{font-family:'Source Serif 4', serif; font-style:italic; font-size:26px; color:var(--navy); line-height:1;}
+  .highlight-item .h-label{font-size:12px; color:var(--muted); margin-top:4px; max-width:140px; line-height:1.4;}
+
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:30px;}
+  .btn{
+    font-family:'IBM Plex Sans', sans-serif; font-size:14px; font-weight:600;
+    padding:12px 22px; border-radius:2px; text-decoration:none; display:inline-block;
+    border:1px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--navy); color:#fff;}
+  .btn-primary:hover{background:#1a2847;}
+  .btn-outline{border-color:var(--line); color:var(--ink);}
+  .btn-outline:hover{border-color:var(--navy); color:var(--navy);}
+
+  .social-row{display:flex; gap:16px; align-items:center;}
+  .social-row a{
+    width:38px; height:38px; border:1px solid var(--line); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; color:var(--ink); text-decoration:none;
+  }
+  .social-row a:hover{border-color:var(--navy); color:var(--navy);}
+
+  .specimen{display:flex; flex-direction:column; align-items:center;}
+  .frame{border:1px solid var(--line); padding:10px; background:var(--paper); box-shadow:0 24px 48px -28px rgba(18,21,28,0.35);}
+  .frame img{display:block; width:100%; max-width:300px; height:auto; filter:grayscale(6%);}
+  .caption{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted); margin-top:10px; text-align:center; letter-spacing:0.02em;}
+
+  section{padding:64px 0;}
+  section.alt{background:var(--surface);}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:36px;}
+  .sec-num{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--navy);}
+  .sec-title{font-family:'Source Serif 4', serif; font-style:italic; font-weight:500; font-size:30px; margin:0;}
+  .sec-sub{color:var(--muted); font-size:14px; margin:-24px 0 32px; max-width:560px;}
+
+  .timeline{position:relative; padding-left:28px; border-left:1px solid var(--line);}
+  .tl-item{position:relative; padding-bottom:34px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-33px; top:4px; width:9px; height:9px;
+    border-radius:50%; background:var(--navy); border:2px solid var(--paper); box-shadow:0 0 0 1px var(--navy);
+  }
+  .tl-period{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--muted); margin:0 0 4px;}
+  .tl-title{font-family:'Source Serif 4', serif; font-style:italic; font-weight:500; font-size:20px; margin:0 0 4px;}
+  .tl-place{font-size:13px; color:var(--muted); margin:0 0 8px;}
+  .tl-desc{font-size:14px; line-height:1.6; color:var(--muted); margin:0; max-width:560px;}
+
+  .exp-list{display:flex; flex-direction:column;}
+  .exp-item{border-top:1px solid var(--line); padding:20px 0; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;}
+  .exp-list .exp-item:last-child{border-bottom:1px solid var(--line);}
+  .exp-main{flex:1; min-width:260px;}
+  .exp-title{font-weight:700; font-size:15px; margin:0 0 3px;}
+  .exp-org{font-size:13px; color:var(--muted); margin:0 0 8px;}
+  .exp-desc{font-size:13.5px; line-height:1.6; color:var(--muted); margin:0; max-width:520px;}
+  .exp-period{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--navy); white-space:nowrap; padding-top:2px;}
+
+  .service-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;}
+  @media (max-width:760px){ .service-grid{grid-template-columns:1fr;} }
+  .service-card{background:var(--paper); border:1px solid var(--line); border-radius:4px; padding:26px 24px;}
+  .service-icon{width:38px; height:38px; border-radius:50%; background:var(--navy-soft); color:var(--navy); display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+  .service-title{font-family:'Source Serif 4', serif; font-style:italic; font-weight:500; font-size:19px; margin:0 0 10px;}
+  .service-desc{font-size:13.5px; line-height:1.6; color:var(--muted); margin:0 0 16px;}
+  .service-tags{display:flex; flex-wrap:wrap; gap:6px;}
+
+  .skill-groups{display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;}
+  @media (max-width:720px){ .skill-groups{grid-template-columns:1fr;} }
+  .skill-group h3{font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin:0 0 14px; font-weight:600;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{font-family:'IBM Plex Mono', monospace; font-size:12.5px; padding:6px 11px; background:var(--navy-soft); color:var(--navy); border-radius:2px;}
+  .tag.soft{background:var(--surface); color:var(--muted); border:1px solid var(--line);}
+
+  .extra-row{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:36px; padding-top:32px; border-top:1px solid var(--line);}
+  @media (max-width:720px){ .extra-row{grid-template-columns:1fr;} }
+
+  .case{border-top:1px solid var(--line); padding:36px 0; display:grid; grid-template-columns:60px 1fr; gap:20px;}
+  .case:last-child{border-bottom:1px solid var(--line);}
+  @media (max-width:720px){ .case{grid-template-columns:1fr; gap:10px;} }
+  .case-index{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--muted); padding-top:4px;}
+  .case-title{font-family:'Source Serif 4', serif; font-style:italic; font-weight:500; font-size:24px; margin:0 0 14px;}
+  .case-cols{display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; margin-bottom:18px;}
+  @media (max-width:640px){ .case-cols{grid-template-columns:1fr;} }
+  .case-cols h4{font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--navy); margin:0 0 6px; font-weight:700;}
+  .case-cols p{margin:0; font-size:14px; line-height:1.6; color:var(--muted);}
+  .result-highlight{color:var(--signal); font-weight:600;}
+  .case-stack{display:flex; flex-wrap:wrap; gap:8px;}
+
+  .contact-dark{background:var(--ink); color:#fff; padding:72px 0;}
+  .contact-dark-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;}
+  @media (max-width:760px){ .contact-dark-grid{grid-template-columns:1fr; gap:44px;} }
+
+  .cd-eyebrow{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; color:#8CA0C6; text-transform:uppercase; margin:0 0 18px;}
+  .cd-lead{font-family:'Source Serif 4', serif; font-style:italic; font-weight:500; font-size:26px; margin:0 0 28px; max-width:420px; line-height:1.4;}
+
+  .cd-socials{display:flex; gap:14px; margin-bottom:24px;}
+  .cd-socials a{
+    width:44px; height:44px; border-radius:50%; background:#1E2A45;
+    display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .cd-socials a:hover{background:var(--navy);}
+
+  .cd-email{display:flex; align-items:center; gap:8px; font-size:15px; font-weight:600; color:#fff; text-decoration:none; margin-bottom:6px;}
+  .cd-email:hover{color:#8CA0C6;}
+  .cd-mark{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.15em; color:rgba(255,255,255,0.3); text-transform:uppercase; margin-top:10px;}
+
+  .cd-form{display:flex; flex-direction:column; gap:12px;}
+  .cd-form input, .cd-form textarea{
+    padding:14px 16px; border-radius:6px; border:none; font-family:'IBM Plex Sans', sans-serif;
+    font-size:14px; background:#fff; color:var(--ink); width:100%;
+  }
+  .cd-form textarea{min-height:110px; resize:vertical;}
+  .cd-form input::placeholder, .cd-form textarea::placeholder{color:#9AA1AC;}
+  .cd-submit{
+    margin-top:6px; align-self:flex-start; background:var(--navy); color:#fff; border:none;
+    padding:14px 30px; border-radius:4px; font-family:'IBM Plex Sans', sans-serif; font-size:13px;
+    font-weight:700; letter-spacing:0.05em; text-transform:uppercase; cursor:pointer;
+  }
+  .cd-submit:hover{background:#1a2847;}
+  .cd-note{font-size:12px; color:rgba(255,255,255,0.4); margin-top:8px;}
+
+  footer.site-footer{background:#0A0C10; padding:18px 0; position:relative;}
+  .footer-inner-dark{text-align:center; font-size:13px; color:rgba(255,255,255,0.55);}
+  .scroll-top{
+    position:fixed; right:24px; bottom:24px; width:44px; height:44px; border-radius:50%;
+    background:#2A2E38; color:#fff; border:none; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.25); z-index:30;
+  }
+  .scroll-top:hover{background:var(--navy);}
+
+  .slider-wrap{position:relative; overflow:hidden; border-radius:6px; height:420px; background:var(--ink);}
+  @media (max-width:640px){ .slider-wrap{height:460px;} }
+  .slide{
+    position:absolute; inset:0; opacity:0; visibility:hidden; transition:opacity 0.6s ease;
+    background-size:cover; background-position:center;
+  }
+  .slide.active{opacity:1; visibility:visible;}
+  .slide-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(0deg, rgba(10,12,16,0.88) 0%, rgba(10,12,16,0.45) 55%, rgba(10,12,16,0.15) 100%);
+    display:flex; flex-direction:column; justify-content:flex-end; padding:40px 56px;
+  }
+  @media (max-width:640px){ .slide-overlay{padding:28px 24px;} }
+  .slide-eyebrow{font-family:'IBM Plex Mono', monospace; font-size:12px; color:#8CA0C6; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 10px;}
+  .slide-title{font-family:'Source Serif 4', serif; font-style:italic; font-weight:500; font-size:28px; color:#fff; margin:0 0 10px;}
+  .slide-desc{font-size:14px; line-height:1.6; color:rgba(255,255,255,0.85); max-width:640px; margin:0;}
+
+  .slider-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); z-index:5;
+    width:42px; height:42px; border-radius:50%; border:1px solid rgba(255,255,255,0.35);
+    background:rgba(10,12,16,0.4); color:#fff; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; backdrop-filter:blur(2px);
+  }
+  .slider-arrow:hover{background:var(--navy); border-color:var(--navy);}
+  .slider-arrow.prev{left:18px;}
+  .slider-arrow.next{right:18px;}
+
+  .slider-dots{position:absolute; bottom:16px; left:0; right:0; display:flex; justify-content:center; gap:8px; z-index:5;}
+  .slider-dot{width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.4); border:none; cursor:pointer; padding:0;}
+  .slider-dot.active{background:#fff; width:22px; border-radius:4px; transition:width 0.25s ease;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-inner">
+    <div class="nav-mark">Fellycia Kisukika</div>
+    <nav class="nav-links">
+      <a href="#profil"><span class="sec-label"></span>Profil</a>
+      <a href="#parcours"><span class="sec-label"></span>Parcours</a>
+      <a href="#experience"><span class="sec-label"></span>Expérience</a>
+      <a href="#services"><span class="sec-label"></span>Services</a>
+      <a href="#competences"><span class="sec-label"></span>Compétences</a>
+      <a href="#etudes"><span class="sec-label"></span>Projets</a>
+      <a href="#galerie"><span class="sec-label"></span>Galerie</a>
+      <a href="#contact"><span class="sec-label"></span>Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section id="profil" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="lead">Diplômée d'une Licence en Business Intelligence et actuellement étudiante en 5ᵉ année du cycle d'ingénieur en Intelligence Artificielle à Bouebdelli University, je suis passionnée par l'exploitation des données et le développement de solutions intelligentes capables de répondre à des problématiques concrètes. Mes domaines d'intérêt couvrent le Machine Learning, le Deep Learning, les Large Language Models (LLM), les agents IA, la vision par ordinateur, le traitement du langage naturel (NLP) ainsi que la Business Intelligence. Au fil de mon parcours, j'ai développé des compétences en analyse de données, en modélisation prédictive et en conception d'applications d'intelligence artificielle. À travers ce portfolio, je partage mes projets académiques et personnels, mes compétences techniques ainsi que mon engagement à concevoir des solutions innovantes, performantes et centrées sur les données, afin de contribuer à la transformation numérique des organisations
+      </p>
+
+
+      <div class="cta-row">
+        <a href="#etudes" class="btn btn-primary">Voir mes projets</a>
+        <a href="#contact" class="btn btn-outline">Me contacter</a>
+      </div>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/in/felly-kisukika-kayana-b086b8252" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zM8.5 8h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
+        </a>
+        <a href="https://github.com/FellyciaKis" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.06 11.06 0 015.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.66.8.55A10.52 10.52 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/fellycia_kis" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.8.31-1.47.72-2.14 1.39C1.32 2.68.91 3.36.6 4.15c-.3.76-.5 1.64-.56 2.91C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.47 1.39 2.14.67.67 1.35 1.08 2.14 1.39.76.3 1.64.5 2.91.56C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.8-.31 1.47-.72 2.14-1.39.67-.67 1.08-1.35 1.39-2.14.3-.76.5-1.64.56-2.91.06-1.27.07-1.68.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.8-.72-1.47-1.39-2.14C21.32 1.32 20.64.91 19.85.6c-.76-.3-1.64-.5-2.91-.56C15.67 0 15.26 0 12 0zm0 5.84A6.16 6.16 0 105.84 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zm6.4-10.4a1.44 1.44 0 11-1.44-1.44A1.44 1.44 0 0118.4 5.6z"/></svg>
+        </a>
+        <a href="mailto:feliciakisukika@gmail.com" aria-label="Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M2 6l10 7 10-7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="specimen">
+      <div class="frame"><img src="assets/felly.jpg" alt="Portrait de Fellycia Kisukika "></div>
+    </div>
+  </div>
+</section>
+
+<section id="parcours" class="alt">
+ <div class="wrap">
+    <div class="sec-head"><span class="sec-num"></span><h2 class="sec-title">Parcours</h2></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <p class="tl-period">2024 — en cours</p>
+        <h3 class="tl-title">Cycle Ingénieur, Intelligence Artificielle</h3>
+        <p class="tl-place">Bouebdelli University · 5ᵉ année</p>
+        <p class="tl-desc">Spécialisation en machine learning, deep learning, traitement du langage naturel et modèles de langage (LLM), avec un intérêt particulier pour les agents IA et leur intégration dans des produits concrets.</p>
+      </div>
+      <div class="tl-item">
+        <p class="tl-period">2021 — 2024</p>
+        <h3 class="tl-title">Licence en Business Intelligence</h3>
+        <p class="tl-place">Bouebdelli University, Tunis</p>
+        <p class="tl-desc">Fondations en analyse de données, aide à la décision et systèmes d'information décisionnels,une base solide qui nourrit aujourd'hui mon approche des projets IA orientés impact métier.</p>
+      </div>
+      <div class="tl-item">
+        <p class="tl-period">2019 — 2020</p>
+        <h3 class="tl-title">Baccalauréat Scientifique (Mathématique Physique)</h3>
+        <p class="tl-place">Collège sadisana, Kikwit/RDC </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num"></span><h2 class="sec-title">Expérience professionnelle</h2></div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-main">
+          <p class="exp-title">Chargée adjointe aux affaires sociales</p>
+          <p class="exp-org">Association des étudiants et stagiaires africains en Tunisie (AESAT), Tunis</p>
+        </div>
+        <span class="exp-period">Avr. 2025 — Mars 2026</span>
+      </div>
+      <div class="exp-item">
+        <div class="exp-main">
+          <p class="exp-title">Stage de Projet de Fin d'Études (PFE)</p>
+          <p class="exp-org">Landolsi Telecom Technology (L2T), Tunis</p>
+          <p class="exp-desc">Conception et réalisation d'une plateforme de mise en relation entre demandeurs et prestataires de services dans le domaine de l'enfance, pour l'obtention de la Licence en Business Intelligence.</p>
+        </div>
+        <span class="exp-period">Févr. — Mai 2024</span>
+      </div>
+      <div class="exp-item">
+        <div class="exp-main">
+          <p class="exp-title">Stagiaire en réseau informatique</p>
+          <p class="exp-org">Caisse Nationale de Sécurité Sociale (CNSS), Kinshasa/RDC</p>
+          <p class="exp-desc">Câblage Ethernet et connecteurs RJ45, tests de connexion réseau (ping).</p>
+        </div>
+        <span class="exp-period">Août — Sept. 2023</span>
+      </div>
+      <div class="exp-item">
+        <div class="exp-main">
+          <p class="exp-title">Stagiaire Conseillère d'Orientation</p>
+          <p class="exp-org">Université Libre de Tunis, Tunis</p>
+        </div>
+        <span class="exp-period">Juin — Août 2022</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num"></span><h2 class="sec-title">Services</h2></div>
+    <p class="sec-sub">Ce que je peux prendre en charge, du besoin métier jusqu'à la solution technique.</p>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="6" cy="6.5" r="0.6" fill="currentColor"/></svg>
+        </div>
+        <h3 class="service-title">Développement d'applications web</h3>
+        <p class="service-desc">Conception et réalisation d'applications web complètes, du backend à l'interface utilisateur, sites vitrines, plateformes métier, systèmes de réservation.</p>
+        <div class="service-tags">
+          <span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+        </div>
+        <h3 class="service-title">Analyse de données & Business Intelligence</h3>
+        <p class="service-desc">Exploration, nettoyage et visualisation de données pour éclairer la prise de décision, tableaux de bord, rapports et indicateurs de performance.</p>
+        <div class="service-tags">
+          <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Excel</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </div>
+        <h3 class="service-title">Machine Learning & Intelligence Artificielle</h3>
+        <p class="service-desc">Conception de modèles prédictifs et de systèmes de traitement du langage naturel, du prototype jusqu'à une intégration produit fonctionnelle.</p>
+        <div class="service-tags">
+          <span class="tag">Machine Learning</span><span class="tag">Deep Learning</span><span class="tag">NLP</span><span class="tag">XGBoost</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="competences">
+   <div class="wrap">
+    <div class="sec-head"><span class="sec-num"></span><h2 class="sec-title">Compétences</h2></div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>IA & Machine Learning</h3>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span>
+          <span class="tag">Deep Learning</span><span class="tag">NLP</span><span class="tag">LLM</span>
+          <span class="tag">Agents IA</span><span class="tag">SHAP</span><span class="tag">Netlogo</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Data & Business Intelligence</h3>
+        <div class="tag-row">
+          <span class="tag">Business Intelligence</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
+          <span class="tag">SQL</span><span class="tag">Analyse de données</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
+          <span class="tag">PowerBIDesktop</span><span class="tag">PostgreSQL </span><span class="tag">Microsoft SQL Server</span><span class="tag">SQL Server Management Studio</span>
+
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Développement & Outils</h3>
+        <div class="tag-row">
+          <span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">JavaScript</span>
+          <span class="tag">React</span><span class="tag">Jupyter</span><span class="tag">Git</span>
+          <span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Framework Symfony</span>
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Java</span>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="etudes" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num"></span><h2 class="sec-title">Projets</h2></div>
+
+    <div class="case">
+      <div class="case-index">01</div>
+      <div>
+        <h3 class="case-title">Détection de fraude bancaire par Machine Learning</h3>
+        <div class="case-cols">
+          <div><h4>Problème</h4><p>Moins de 0,3% des transactions sont frauduleuses,un déséquilibre qui rend les métriques classiques trompeuses.</p></div>
+          <div><h4>Approche</h4><p>XGBoost avec ré-échantillonnage SMOTE, calibration du seuil de décision, interprétabilité via SHAP.</p></div>
+          <div><h4>Résultat</h4><p><span class="result-highlight">PR-AUC de 0,277</span>, environ 6× supérieur aux modèles de référence testés.</p></div>
+        </div>
+        <div class="case-stack">
+          <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">SMOTE</span><span class="tag">SHAP</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-index">02</div>
+      <div>
+        <h3 class="case-title">Analyse de sentiment & extraction de tendances</h3>
+        <div class="case-cols">
+          <div><h4>Problème</h4><p>Comprendre automatiquement le ton et les causes d'insatisfaction dans un grand volume d'avis clients.</p></div>
+          <div><h4>Approche</h4><p>Pipeline NLP complet (nettoyage, TF-IDF), comparaison de classifieurs, topic modeling par NMF.</p></div>
+          <div><h4>Résultat</h4><p><span class="result-highlight">98% d'accuracy</span> et identification de 4 thématiques de mécontentement récurrentes.</p></div>
+        </div>
+        <div class="case-stack">
+          <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">NLP</span><span class="tag">NMF</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-index">03</div>
+      <div>
+        <h3 class="case-title">Atelier Tressé,  Plateforme de réservation avec IA intégrée</h3>
+        <div class="case-cols">
+          <div><h4>Problème</h4><p>Un salon de coiffure/onglerie a besoin d'un outil de réservation et d'un moyen de suivre la satisfaction client.</p></div>
+          <div><h4>Approche</h4><p>Application full-stack (FastAPI, SQLite, JS) avec le modèle de sentiment branché en direct sur chaque avis.</p></div>
+          <div><h4>Résultat</h4><p><span class="result-highlight">Plateforme fonctionnelle de bout en bout</span> — réservation, avis, dashboard admin en temps réel.</p></div>
+        </div>
+        <div class="case-stack">
+          <span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">JavaScript</span><span class="tag">Machine Learning</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-index">04</div>
+      <div>
+        <h3 class="case-title">Plateforme de mise en relation, Services à l'enfance</h3>
+        <div class="case-cols">
+          <div><h4>Problème</h4><p>Faciliter la mise en relation entre demandeurs et prestataires de services dans le domaine de l'enfance.</p></div>
+          <div><h4>Approche</h4><p>Conception et réalisation complète de la plateforme dans le cadre du Stage PFE, de l'analyse du besoin au déploiement.</p></div>
+          <div><h4>Résultat</h4><p><span class="result-highlight">Projet de fin d'études validé</span>, à l'obtention du diplôme de Licence en Business Intelligence.</p></div>
+        </div>
+        <div class="case-stack">
+          <span class="tag">Business Intelligence</span><span class="tag">SQL</span><span class="tag">Développement web</span>
+        </div>
+      </div>
+    </div>
+     <div class="case">
+      <div class="case-index">05</div>
+      <div>
+  <h3 class="case-title">Plateforme de voyage et services touristiques</h3>
+  <div class="case-cols">
+    <div>
+      <h4>Problème</h4>
+      <p>Faciliter l'organisation des voyages en proposant une plateforme centralisée permettant aux voyageurs de rechercher des destinations, réserver des services touristiques et accéder à des informations pratiques en toute simplicité.</p>
+    </div>
+
+    <div>
+      <h4>Approche</h4>
+      <p>Conception et développement d'une plateforme web intuitive intégrant la gestion des destinations, des réservations, des hébergements, des circuits touristiques et des profils utilisateurs, en appliquant les bonnes pratiques du développement web.</p>
+    </div>
+
+    <div>
+      <h4>Résultat</h4>
+      <p><span class="result-highlight">Une plateforme fonctionnelle et conviviale</span> offrant une expérience utilisateur fluide pour la planification et la réservation de voyages, tout en facilitant la gestion des services touristiques.</p>
+    </div>
+  </div>
+
+  <div class="case-stack">
+    <span class="tag">Développement Web</span>
+    <span class="tag">PHP</span>
+    <span class="tag">MySQL</span>
+    <span class="tag">HTML/CSS</span>
+    <span class="tag">JavaScript</span>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<section id="galerie" class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num"></span><h2 class="sec-title">Galerie</h2></div>
+    <p class="sec-sub">Quelques moments de mes déplacements, formations et réalisations.</p>
+
+    <div class="slider-wrap" id="slider">
+      <div class="slide active" style="background-image:url('assets/gallery/p.jpeg')">
+        <div class="slide-overlay">
+          <p class="slide-eyebrow"></p>
+          <h3 class="slide-title">Forum tuniso-congolais</h3>
+          <p class="slide-desc">En tant que stagiaire conseillère d'orientation, j'ai accompagné le Directeur au Forum tuniso-congolais, contribuant à la promotion de l'université, à l'orientation des futurs étudiants et au renforcement des partenariats académiques.</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image:url('assets/gallery/IMG_1865.JPG')">
+        <div class="slide-overlay">
+          <p class="slide-eyebrow"></p>
+          <h3 class="slide-title">Exposition – Hôtel Sultani, Kinshasa</h3>
+          <p class="slide-desc">Participation à une exposition organisée à l'Hôtel Sultani de Kinshasa pour promouvoir les opportunités académiques et renforcer les partenariats.</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image:url('assets/gallery/IMG_1852.JPG')">
+        <div class="slide-overlay">
+          <p class="slide-eyebrow"></p>
+          <h3 class="slide-title">Présentation au Collège Bonsomi</h3>
+          <p class="slide-desc">Intervention au Collège Bonsomi aux côtés du Directeur afin de présenter l'université et d'informer les futurs étudiants sur les formations proposées.</p>
+        </div>s
+      </div>
+      <div class="slide" style="background-image:url('assets/gallery/NRUH8972.JPG')">
+        <div class="slide-overlay">
+          <p class="slide-eyebrow"></p>
+          <h3 class="slide-title">Présentation au Collège Bonsomi</h3>
+          <p class="slide-desc">Intervention au Collège Bonsomi aux côtés du Directeur afin de présenter l'université et d'informer les futurs étudiants sur les formations proposées.</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image:url('assets/gallery/p8.jpeg')">
+        <div class="slide-overlay">
+          <p class="slide-eyebrow">2023 — CNSS, Kinshasa</p>
+          <h3 class="slide-title"></h3>
+          <p class="slide-desc">Stage professionnel en réseau informatique à la CNSS, avec une participation aux activités d'administration, de maintenance et de gestion des infrastructures réseau.</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image:url('assets/gallery/p1.jpeg')">
+        <div class="slide-overlay">
+          <p class="slide-eyebrow"></p>
+          <h3 class="slide-title">Collège Bonsomi</h3>
+          <p class="slide-desc">Présentation des formations et sensibilisation des futurs étudiants.</p>
+        </div>
+      </div>
+
+      <button class="slider-arrow prev" id="slider-prev" aria-label="Précédent">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="slider-arrow next" id="slider-next" aria-label="Suivant">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <div class="slider-dots" id="slider-dots"></div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="contact-dark">
+  <div class="wrap contact-dark-grid">
+    <div>
+      <p class="cd-eyebrow">Contact</p>
+      <p class="cd-lead">Ouverte aux opportunités de stage et de collaboration en développement web, data et intelligence artificielle.</p>
+
+      <div class="cd-socials">
+        <a href="https://www.instagram.com/fellycia_kis" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.8.31-1.47.72-2.14 1.39C1.32 2.68.91 3.36.6 4.15c-.3.76-.5 1.64-.56 2.91C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.47 1.39 2.14.67.67 1.35 1.08 2.14 1.39.76.3 1.64.5 2.91.56C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.8-.31 1.47-.72 2.14-1.39.67-.67 1.08-1.35 1.39-2.14.3-.76.5-1.64.56-2.91.06-1.27.07-1.68.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.8-.72-1.47-1.39-2.14C21.32 1.32 20.64.91 19.85.6c-.76-.3-1.64-.5-2.91-.56C15.67 0 15.26 0 12 0zm0 5.84A6.16 6.16 0 105.84 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zm6.4-10.4a1.44 1.44 0 11-1.44-1.44A1.44 1.44 0 0118.4 5.6z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/felly-kisukika-kayana-b086b8252" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zM8.5 8h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
+        </a>
+        <a href="https://github.com/FellyciaKis" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.06 11.06 0 015.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.66.8.55A10.52 10.52 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        </a>
+        <a href="mailto:feliciakisukika@gmail.com" aria-label="Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M2 6l10 7 10-7"/></svg>
+        </a>
+      </div>
+
+      <a class="cd-email" href="mailto:feliciakisukika@gmail.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M2 6l10 7 10-7"/></svg>
+        feliciakisukika@gmail.com
+      </a><br>
+      
+    </div>
+
+    <form class="cd-form" id="contact-form">
+      <input type="text" id="cf-nom" placeholder="Nom" required>
+      <input type="tel" id="cf-tel" placeholder="N° Tél... (Whatsapp)">
+      <input type="email" id="cf-email" placeholder="E-mail" required>
+      <textarea id="cf-message" placeholder="Message" required></textarea>
+      <button type="submit" class="cd-submit">Envoyer</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner-dark">
+    Copyright © 2026 Fellycia Kisukika. Tous droits réservés. <a href="mailto:feliciakisukika@gmail.com">Contact</a>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top-btn" aria-label="Retour en haut">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const nom = document.getElementById('cf-nom').value;
+    const tel = document.getElementById('cf-tel').value;
+    const email = document.getElementById('cf-email').value;
+    const message = document.getElementById('cf-message').value;
+    const subject = encodeURIComponent('Contact portfolio — ' + nom);
+    const body = encodeURIComponent(
+      'Nom: ' + nom + '\n' +
+      'Téléphone (WhatsApp): ' + tel + '\n' +
+      'Email: ' + email + '\n\n' +
+      message
+    );
+    window.location.href = 'mailto:feliciakisukika@gmail.com?subject=' + subject + '&body=' + body;
+  });
+
+  const scrollBtn = document.getElementById('scroll-top-btn');
+  window.addEventListener('scroll', () => {
+    scrollBtn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  });
+  scrollBtn.style.display = 'none';
+  scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  const slides = document.querySelectorAll('#slider .slide');
+  const dotsWrap = document.getElementById('slider-dots');
+  let current = 0;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = document.querySelectorAll('.slider-dot');
+
+  function goToSlide(i) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (i + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  document.getElementById('slider-prev').addEventListener('click', () => { goToSlide(current - 1); resetAutoplay(); });
+  document.getElementById('slider-next').addEventListener('click', () => { goToSlide(current + 1); resetAutoplay(); });
+
+  let sliderAutoplay = setInterval(() => goToSlide(current + 1), 4000);
+  function resetAutoplay(){ clearInterval(sliderAutoplay); sliderAutoplay = setInterval(() => goToSlide(current + 1), 4000); }
+
+  const sliderEl = document.getElementById('slider');
+  sliderEl.addEventListener('mouseenter', () => clearInterval(sliderAutoplay));
+  sliderEl.addEventListener('mouseleave', resetAutoplay);
+</script>
+
+</body>
+</html>
